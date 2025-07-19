@@ -8,7 +8,7 @@ uploaded_file = st.file_uploader("Încarcă fișierul CSV exportat din ZipGrade"
 
 def calculeaza_nota(row):
     nota = 0.0
-    for i in range(1, 61):
+    for i in range(1, 60):
         student_col = f"#{i} Student Response"
         corect_col = f"#{i} Primary Answer"
         if pd.isna(row[student_col]) or pd.isna(row[corect_col]):
@@ -16,7 +16,7 @@ def calculeaza_nota(row):
         if row[student_col].strip() == row[corect_col].strip():
             nota += 1.0
 
-    for i in range(61, 101):
+    for i in range(61, 100):
         student_col = f"#{i} Student Response"
         corect_col = f"#{i} Primary Answer"
         if pd.isna(row[student_col]) or pd.isna(row[corect_col]):
